@@ -1,0 +1,61 @@
+[
+  {
+    "studentId": "student_demo",
+    "id": "ALG.LINEAR.EQ.001",
+    "name": "Solve linear equations",
+    "description": "Isolate variable using inverse operations",
+    "tags": ["algebra"],
+    "vector": {
+      "mastery": 1.0,
+      "edge_case": 0.8,
+      "implementation": 0.9
+    },
+    "difficulty": 0.4,
+    "timestamps": "10:00"
+  },
+
+  {
+    "studentId": "student_demo",
+    "id": "ALG.FACTOR.001",
+    "name": "Factor quadratics",
+    "description": "Factor quadratic expressions",
+    "tags": ["algebra"],
+    "vector": {
+      "mastery": 1.0,
+      "edge_case": 0.9,
+      "implementation": 0.9
+    },
+    "difficulty": 0.6,
+    "timestamps": "10:05"
+  },
+
+  {
+    "studentId": "student_demo",
+    "id": "CALC.DERIV.001",
+    "name": "Differentiate polynomials",
+    "description": "Apply power rule",
+    "tags": ["calculus"],
+    "vector": {
+      "mastery": 1.0,
+      "edge_case": 0.7,
+      "implementation": 0.8
+    },
+    "difficulty": 0.5,
+    "timestamps": "10:10"
+  },
+
+  {
+    "studentId": "student_demo",
+    "id": "CALC.CHAIN.001",
+    "name": "Chain rule",
+    "description": "Differentiate composite functions",
+    "tags": ["calculus"],
+    "vector": {
+      "mastery": 1.0,
+      "edge_case": 1.0,
+      "implementation": 1.0
+    },
+    "difficulty": 0.8,
+    "timestamps": "10:15"
+  }
+]
