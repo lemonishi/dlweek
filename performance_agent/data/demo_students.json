@@ -1,0 +1,61 @@
+{
+  "studentId": "student_demo",
+
+  "skills": [
+    {
+      "id": "ALG.LINEAR.EQ.001",
+      "name": "Solve linear equations",
+      "vector": {
+        "mastery": 0.85,
+        "edge_case": 0.6,
+        "implementation": 0.7
+      }
+    },
+
+    {
+      "id": "ALG.FACTOR.001",
+      "name": "Factor quadratics",
+      "vector": {
+        "mastery": 0.3,
+        "edge_case": 0.2,
+        "implementation": 0.3
+      }
+    },
+
+    {
+      "id": "CALC.DERIV.001",
+      "name": "Differentiate polynomials",
+      "vector": {
+        "mastery": 0.9,
+        "edge_case": 0.8,
+        "implementation": 0.8
+      }
+    },
+
+    {
+      "id": "CALC.CHAIN.001",
+      "name": "Chain rule",
+      "vector": {
+        "mastery": 0.2,
+        "edge_case": 0.2,
+        "implementation": 0.1
+      }
+    }
+  ],
+
+  "history": [
+    { "skillId": "ALG.LINEAR.EQ.001", "correct": 1, "timestamp": 1 },
+    { "skillId": "ALG.LINEAR.EQ.001", "correct": 1, "timestamp": 2 },
+    { "skillId": "ALG.LINEAR.EQ.001", "correct": 0, "timestamp": 3 },
+
+    { "skillId": "ALG.FACTOR.001", "correct": 0, "timestamp": 4 },
+    { "skillId": "ALG.FACTOR.001", "correct": 0, "timestamp": 5 },
+
+    { "skillId": "CALC.DERIV.001", "correct": 1, "timestamp": 6 },
+    { "skillId": "CALC.DERIV.001", "correct": 1, "timestamp": 7 },
+
+    { "skillId": "CALC.CHAIN.001", "correct": 0, "timestamp": 8 },
+    { "skillId": "CALC.CHAIN.001", "correct": 0, "timestamp": 9 },
+    { "skillId": "CALC.CHAIN.001", "correct": 0, "timestamp": 10 }
+  ]
+}

@@ -1,0 +1,1402 @@
+[
+  {
+    "id": "ALG.LINEAR.EQ.001",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.LINEAR.EQ.001",
+    "name": "LINEAR EQ skill 1",
+    "vector": [
+      0.9228978869420305,
+      0.14390468402877776,
+      0.41263489048343094
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.ADD.002",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.ADD.002",
+    "name": "FRACTIONS ADD skill 2",
+    "vector": [
+      0.35866618997450905,
+      0.5494763898330784,
+      0.1321738254924112
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.SUB.003",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.SUB.003",
+    "name": "FRACTIONS SUB skill 3",
+    "vector": [
+      0.15189995233149334,
+      0.781707223794969,
+      0.4793918969937948
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.MULT.004",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.MULT.004",
+    "name": "FRACTIONS MULT skill 4",
+    "vector": [
+      0.035871807671247646,
+      0.8186944109273112,
+      0.9699657891233735
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.DIV.005",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.DIV.005",
+    "name": "FRACTIONS DIV skill 5",
+    "vector": [
+      0.5272316049270074,
+      0.8558925138724062,
+      0.8333669502742452
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.QUADRATIC.SOLVE.006",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.QUADRATIC.SOLVE.006",
+    "name": "QUADRATIC SOLVE skill 6",
+    "vector": [
+      0.6224234339237712,
+      0.3816192926298162,
+      0.8620755411327518
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.QUADRATIC.FACTOR.007",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.QUADRATIC.FACTOR.007",
+    "name": "QUADRATIC FACTOR skill 7",
+    "vector": [
+      0.33384642579579493,
+      0.044247906983248986,
+      0.361384377339402
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.INEQUAL.SOLVE.008",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.INEQUAL.SOLVE.008",
+    "name": "INEQUAL SOLVE skill 8",
+    "vector": [
+      0.8536970502882704,
+      0.3046555225058928,
+      0.26676880672581393
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.POLY.SIMPLIFY.009",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.POLY.SIMPLIFY.009",
+    "name": "POLY SIMPLIFY skill 9",
+    "vector": [
+      0.8374629957258413,
+      0.6899716715520365,
+      0.6851125483772152
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.EXP.RULES.010",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.EXP.RULES.010",
+    "name": "EXP RULES skill 10",
+    "vector": [
+      0.1583588904751776,
+      0.033086792620137695,
+      0.8439152676086308
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.LINEAR.EQ.011",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.LINEAR.EQ.011",
+    "name": "LINEAR EQ skill 11",
+    "vector": [
+      0.25984830201176645,
+      0.0944102646349455,
+      0.5959149397629806
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.ADD.012",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.ADD.012",
+    "name": "FRACTIONS ADD skill 12",
+    "vector": [
+      0.9848745427353184,
+      0.44825378092036594,
+      0.2253428166266821
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.SUB.013",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.SUB.013",
+    "name": "FRACTIONS SUB skill 13",
+    "vector": [
+      0.2016347222976178,
+      0.8145642908235953,
+      0.820693436359052
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.MULT.014",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.MULT.014",
+    "name": "FRACTIONS MULT skill 14",
+    "vector": [
+      0.2213404079052954,
+      0.25718664349794085,
+      0.13134436418352102
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.DIV.015",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.DIV.015",
+    "name": "FRACTIONS DIV skill 15",
+    "vector": [
+      0.7120423349523691,
+      0.22090628289010705,
+      0.570380605980933
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.QUADRATIC.SOLVE.016",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.QUADRATIC.SOLVE.016",
+    "name": "QUADRATIC SOLVE skill 16",
+    "vector": [
+      0.30701644266165684,
+      0.5910803077143258,
+      0.8739307626283328
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.QUADRATIC.FACTOR.017",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.QUADRATIC.FACTOR.017",
+    "name": "QUADRATIC FACTOR skill 17",
+    "vector": [
+      0.9497509812393814,
+      0.08673211105730949,
+      0.3429646002274388
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.INEQUAL.SOLVE.018",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.INEQUAL.SOLVE.018",
+    "name": "INEQUAL SOLVE skill 18",
+    "vector": [
+      0.056382066135069575,
+      0.22808905284215053,
+      0.5620903623156874
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.POLY.SIMPLIFY.019",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.POLY.SIMPLIFY.019",
+    "name": "POLY SIMPLIFY skill 19",
+    "vector": [
+      0.7535391718065889,
+      0.2570633319868558,
+      0.5035882852465076
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.EXP.RULES.020",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.EXP.RULES.020",
+    "name": "EXP RULES skill 20",
+    "vector": [
+      0.41710518187869206,
+      0.8077667707508668,
+      0.0053307586553774655
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.LINEAR.EQ.021",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.LINEAR.EQ.021",
+    "name": "LINEAR EQ skill 21",
+    "vector": [
+      0.9907602765783129,
+      0.44533150979595826,
+      0.6206002306995385
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.ADD.022",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.ADD.022",
+    "name": "FRACTIONS ADD skill 22",
+    "vector": [
+      0.41023793233827877,
+      0.7498582258007,
+      0.4598840232136413
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.SUB.023",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.SUB.023",
+    "name": "FRACTIONS SUB skill 23",
+    "vector": [
+      0.8168849528953629,
+      0.4828600620089114,
+      0.07455609035014621
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.MULT.024",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.MULT.024",
+    "name": "FRACTIONS MULT skill 24",
+    "vector": [
+      0.27597294970662367,
+      0.9817347883233772,
+      0.3659905319319191
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.DIV.025",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.DIV.025",
+    "name": "FRACTIONS DIV skill 25",
+    "vector": [
+      0.9794151292858334,
+      0.4367335972060483,
+      0.32474363951925633
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.QUADRATIC.SOLVE.026",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.QUADRATIC.SOLVE.026",
+    "name": "QUADRATIC SOLVE skill 26",
+    "vector": [
+      0.3857239417234447,
+      0.14336411494480483,
+      0.4205934087540234
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.QUADRATIC.FACTOR.027",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.QUADRATIC.FACTOR.027",
+    "name": "QUADRATIC FACTOR skill 27",
+    "vector": [
+      0.7777443192614724,
+      0.17592628323791737,
+      0.3797877915229343
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.INEQUAL.SOLVE.028",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.INEQUAL.SOLVE.028",
+    "name": "INEQUAL SOLVE skill 28",
+    "vector": [
+      0.09302471268644097,
+      0.8074872829765394,
+      0.3805008365511259
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.POLY.SIMPLIFY.029",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.POLY.SIMPLIFY.029",
+    "name": "POLY SIMPLIFY skill 29",
+    "vector": [
+      0.5896310363202794,
+      0.17059456070210932,
+      0.6781724380711931
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.EXP.RULES.030",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.EXP.RULES.030",
+    "name": "EXP RULES skill 30",
+    "vector": [
+      0.31434130425382567,
+      0.17111323955636004,
+      0.6514556580174402
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.LINEAR.EQ.031",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.LINEAR.EQ.031",
+    "name": "LINEAR EQ skill 31",
+    "vector": [
+      0.27927006942538046,
+      0.1913958054704198,
+      0.821082566715825
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.ADD.032",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.ADD.032",
+    "name": "FRACTIONS ADD skill 32",
+    "vector": [
+      0.8735911101590196,
+      0.948981942109548,
+      0.7760422745645793
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.SUB.033",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.SUB.033",
+    "name": "FRACTIONS SUB skill 33",
+    "vector": [
+      0.48260776830867935,
+      0.41159226627848033,
+      0.20458540921532375
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.MULT.034",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.MULT.034",
+    "name": "FRACTIONS MULT skill 34",
+    "vector": [
+      0.8884198148853866,
+      0.7999575287841107,
+      0.10506090115694855
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.DIV.035",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.DIV.035",
+    "name": "FRACTIONS DIV skill 35",
+    "vector": [
+      0.22045905375916308,
+      0.40897375858857243,
+      0.9146101650037239
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.QUADRATIC.SOLVE.036",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.QUADRATIC.SOLVE.036",
+    "name": "QUADRATIC SOLVE skill 36",
+    "vector": [
+      0.05007035229714052,
+      0.9681049368254507,
+      0.6867359772968705
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.QUADRATIC.FACTOR.037",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.QUADRATIC.FACTOR.037",
+    "name": "QUADRATIC FACTOR skill 37",
+    "vector": [
+      0.07112304320847196,
+      0.4202108769989016,
+      0.9784109448388587
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.INEQUAL.SOLVE.038",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.INEQUAL.SOLVE.038",
+    "name": "INEQUAL SOLVE skill 38",
+    "vector": [
+      0.31755187592504397,
+      0.12746315009659337,
+      0.6265315213680964
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.POLY.SIMPLIFY.039",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.POLY.SIMPLIFY.039",
+    "name": "POLY SIMPLIFY skill 39",
+    "vector": [
+      0.2060363805233819,
+      0.6398729261125463,
+      0.6301677457696019
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.EXP.RULES.040",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.EXP.RULES.040",
+    "name": "EXP RULES skill 40",
+    "vector": [
+      0.49603480364422836,
+      0.08980852801740669,
+      0.26163411370642864
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.LINEAR.EQ.041",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.LINEAR.EQ.041",
+    "name": "LINEAR EQ skill 41",
+    "vector": [
+      0.4001311490110865,
+      0.21813587549000313,
+      0.22996247779346113
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.ADD.042",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.ADD.042",
+    "name": "FRACTIONS ADD skill 42",
+    "vector": [
+      0.09230402549659078,
+      0.5031791521283597,
+      0.9246664330935628
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.SUB.043",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.SUB.043",
+    "name": "FRACTIONS SUB skill 43",
+    "vector": [
+      0.03412834797130515,
+      0.9829294204072879,
+      0.3358990557057284
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.MULT.044",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.MULT.044",
+    "name": "FRACTIONS MULT skill 44",
+    "vector": [
+      0.9932674783238552,
+      0.9191225439871676,
+      0.04519896283580871
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.DIV.045",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.DIV.045",
+    "name": "FRACTIONS DIV skill 45",
+    "vector": [
+      0.3420292576916799,
+      0.984065276278973,
+      0.797146308784786
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.QUADRATIC.SOLVE.046",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.QUADRATIC.SOLVE.046",
+    "name": "QUADRATIC SOLVE skill 46",
+    "vector": [
+      0.01778632476720521,
+      0.7143122398420254,
+      0.3091475058164751
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.QUADRATIC.FACTOR.047",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.QUADRATIC.FACTOR.047",
+    "name": "QUADRATIC FACTOR skill 47",
+    "vector": [
+      0.7943647074146294,
+      0.2777309272090386,
+      0.6962741116114262
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.INEQUAL.SOLVE.048",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.INEQUAL.SOLVE.048",
+    "name": "INEQUAL SOLVE skill 48",
+    "vector": [
+      0.2973797820435251,
+      0.2589623408705607,
+      0.37409995918296624
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.POLY.SIMPLIFY.049",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.POLY.SIMPLIFY.049",
+    "name": "POLY SIMPLIFY skill 49",
+    "vector": [
+      0.78141572658701,
+      0.5674697951602046,
+      0.3249267236402378
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.EXP.RULES.050",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.EXP.RULES.050",
+    "name": "EXP RULES skill 50",
+    "vector": [
+      0.44548249621403857,
+      0.12111360416802286,
+      0.9343595135646683
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.LINEAR.EQ.051",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.LINEAR.EQ.051",
+    "name": "LINEAR EQ skill 51",
+    "vector": [
+      0.4239637030300557,
+      0.4080889743917374,
+      0.6930811582503267
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.ADD.052",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.ADD.052",
+    "name": "FRACTIONS ADD skill 52",
+    "vector": [
+      0.2791887738669464,
+      0.4226867566512652,
+      0.8946583600109711
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.SUB.053",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.SUB.053",
+    "name": "FRACTIONS SUB skill 53",
+    "vector": [
+      0.16355535923771902,
+      0.8370146205405519,
+      0.6689770997080601
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.MULT.054",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.MULT.054",
+    "name": "FRACTIONS MULT skill 54",
+    "vector": [
+      0.6633615295503272,
+      0.2716075923312824,
+      0.04795944809173802
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.DIV.055",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.DIV.055",
+    "name": "FRACTIONS DIV skill 55",
+    "vector": [
+      0.4653375374997658,
+      0.13225489409824254,
+      0.8453053041803353
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.QUADRATIC.SOLVE.056",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.QUADRATIC.SOLVE.056",
+    "name": "QUADRATIC SOLVE skill 56",
+    "vector": [
+      0.6499692889641596,
+      0.8921948956239355,
+      0.508733447985369
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.QUADRATIC.FACTOR.057",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.QUADRATIC.FACTOR.057",
+    "name": "QUADRATIC FACTOR skill 57",
+    "vector": [
+      0.029755577439306347,
+      0.537143554340415,
+      0.9391830323448895
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.INEQUAL.SOLVE.058",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.INEQUAL.SOLVE.058",
+    "name": "INEQUAL SOLVE skill 58",
+    "vector": [
+      0.5202044955329704,
+      0.12173444064350547,
+      0.9408300237266647
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.POLY.SIMPLIFY.059",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.POLY.SIMPLIFY.059",
+    "name": "POLY SIMPLIFY skill 59",
+    "vector": [
+      0.4252533638299658,
+      0.43172996718925405,
+      0.9119789739485322
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.EXP.RULES.060",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.EXP.RULES.060",
+    "name": "EXP RULES skill 60",
+    "vector": [
+      0.4314578982263225,
+      0.5274973999789756,
+      0.644907704876024
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.LINEAR.EQ.061",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.LINEAR.EQ.061",
+    "name": "LINEAR EQ skill 61",
+    "vector": [
+      0.8746965716987445,
+      0.23578378516191956,
+      0.09492311017948751
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.ADD.062",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.ADD.062",
+    "name": "FRACTIONS ADD skill 62",
+    "vector": [
+      0.7301335061448104,
+      0.49137410380090096,
+      0.34312113553298196
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.SUB.063",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.SUB.063",
+    "name": "FRACTIONS SUB skill 63",
+    "vector": [
+      0.6304013046731687,
+      0.6749216806701157,
+      0.21977406418307155
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.MULT.064",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.MULT.064",
+    "name": "FRACTIONS MULT skill 64",
+    "vector": [
+      0.4213918040279533,
+      0.8288479521072,
+      0.2619025672304294
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.DIV.065",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.DIV.065",
+    "name": "FRACTIONS DIV skill 65",
+    "vector": [
+      0.867109000286269,
+      0.9496572652609707,
+      0.4551942948528187
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.QUADRATIC.SOLVE.066",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.QUADRATIC.SOLVE.066",
+    "name": "QUADRATIC SOLVE skill 66",
+    "vector": [
+      0.1907468545497254,
+      0.7866553983153985,
+      0.9458104601572456
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.QUADRATIC.FACTOR.067",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.QUADRATIC.FACTOR.067",
+    "name": "QUADRATIC FACTOR skill 67",
+    "vector": [
+      0.9742552003631927,
+      0.9721929742868625,
+      0.6665468827473027
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.INEQUAL.SOLVE.068",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.INEQUAL.SOLVE.068",
+    "name": "INEQUAL SOLVE skill 68",
+    "vector": [
+      0.4502356257909891,
+      0.27664341025163774,
+      0.21712983327751778
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.POLY.SIMPLIFY.069",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.POLY.SIMPLIFY.069",
+    "name": "POLY SIMPLIFY skill 69",
+    "vector": [
+      0.7875757317049799,
+      0.9958192778151653,
+      0.03914043979345172
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.EXP.RULES.070",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.EXP.RULES.070",
+    "name": "EXP RULES skill 70",
+    "vector": [
+      0.00558951222239823,
+      0.719787637110139,
+      0.6662304813153356
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.LINEAR.EQ.071",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.LINEAR.EQ.071",
+    "name": "LINEAR EQ skill 71",
+    "vector": [
+      0.3433607080541786,
+      0.0028278546832579687,
+      0.764203328755771
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.ADD.072",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.ADD.072",
+    "name": "FRACTIONS ADD skill 72",
+    "vector": [
+      0.15850647771973347,
+      0.17232067201603352,
+      0.42083431695832485
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.SUB.073",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.SUB.073",
+    "name": "FRACTIONS SUB skill 73",
+    "vector": [
+      0.5261158579340942,
+      0.3919745600049722,
+      0.17312577687902408
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.MULT.074",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.MULT.074",
+    "name": "FRACTIONS MULT skill 74",
+    "vector": [
+      0.31290336857013135,
+      0.31526934793779127,
+      0.8937021523993397
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.DIV.075",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.DIV.075",
+    "name": "FRACTIONS DIV skill 75",
+    "vector": [
+      0.6992672740822081,
+      0.44473318406312856,
+      0.6175460478142649
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.QUADRATIC.SOLVE.076",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.QUADRATIC.SOLVE.076",
+    "name": "QUADRATIC SOLVE skill 76",
+    "vector": [
+      0.5373274549705224,
+      0.4653526451243609,
+      0.8652322692674601
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.QUADRATIC.FACTOR.077",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.QUADRATIC.FACTOR.077",
+    "name": "QUADRATIC FACTOR skill 77",
+    "vector": [
+      0.4640125429435915,
+      0.3946689083762661,
+      0.6343855178454546
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.INEQUAL.SOLVE.078",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.INEQUAL.SOLVE.078",
+    "name": "INEQUAL SOLVE skill 78",
+    "vector": [
+      0.5409292884351454,
+      0.23134145608508716,
+      0.5636720004157113
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.POLY.SIMPLIFY.079",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.POLY.SIMPLIFY.079",
+    "name": "POLY SIMPLIFY skill 79",
+    "vector": [
+      0.1496769358315192,
+      0.9602770796641399,
+      0.882440810837278
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.EXP.RULES.080",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.EXP.RULES.080",
+    "name": "EXP RULES skill 80",
+    "vector": [
+      0.016040290206596364,
+      0.5154388196883293,
+      0.7974383459474255
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.LINEAR.EQ.081",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.LINEAR.EQ.081",
+    "name": "LINEAR EQ skill 81",
+    "vector": [
+      0.8634506334551132,
+      0.6572926722590534,
+      0.9818822380450293
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.ADD.082",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.ADD.082",
+    "name": "FRACTIONS ADD skill 82",
+    "vector": [
+      0.2655733971574241,
+      0.1353080541720868,
+      0.12809536378155828
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.SUB.083",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.SUB.083",
+    "name": "FRACTIONS SUB skill 83",
+    "vector": [
+      0.6734953319776997,
+      0.9862107770736407,
+      0.7343438829175514
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.MULT.084",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.MULT.084",
+    "name": "FRACTIONS MULT skill 84",
+    "vector": [
+      0.42476432420248633,
+      0.03932403886162639,
+      0.36857921006864547
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.DIV.085",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.DIV.085",
+    "name": "FRACTIONS DIV skill 85",
+    "vector": [
+      0.34113247576967365,
+      0.3894899810042114,
+      0.0827120881273502
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.QUADRATIC.SOLVE.086",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.QUADRATIC.SOLVE.086",
+    "name": "QUADRATIC SOLVE skill 86",
+    "vector": [
+      0.7869276393266992,
+      0.6999307247523174,
+      0.1391399942539422
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.QUADRATIC.FACTOR.087",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.QUADRATIC.FACTOR.087",
+    "name": "QUADRATIC FACTOR skill 87",
+    "vector": [
+      0.5002686809003175,
+      0.170562191013234,
+      0.8914635525293292
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.INEQUAL.SOLVE.088",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.INEQUAL.SOLVE.088",
+    "name": "INEQUAL SOLVE skill 88",
+    "vector": [
+      0.029399918001049907,
+      0.5338859893731231,
+      0.7483745403226606
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.POLY.SIMPLIFY.089",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.POLY.SIMPLIFY.089",
+    "name": "POLY SIMPLIFY skill 89",
+    "vector": [
+      0.5579033933919613,
+      0.9131842433578993,
+      0.48828249512688493
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.EXP.RULES.090",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.EXP.RULES.090",
+    "name": "EXP RULES skill 90",
+    "vector": [
+      0.6681419299377384,
+      0.18934948507198268,
+      0.01574403703221916
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.LINEAR.EQ.091",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.LINEAR.EQ.091",
+    "name": "LINEAR EQ skill 91",
+    "vector": [
+      0.7436607915851885,
+      0.6193763422420746,
+      0.7067038267143497
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.ADD.092",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.ADD.092",
+    "name": "FRACTIONS ADD skill 92",
+    "vector": [
+      0.31337105597943093,
+      0.30874942308501985,
+      0.20040340717149774
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.SUB.093",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.SUB.093",
+    "name": "FRACTIONS SUB skill 93",
+    "vector": [
+      0.9063518881489863,
+      0.21632818536353504,
+      0.15880167368760267
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.MULT.094",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.MULT.094",
+    "name": "FRACTIONS MULT skill 94",
+    "vector": [
+      0.713678104825179,
+      0.34279223826015626,
+      0.18350378860399064
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.FRACTIONS.DIV.095",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.FRACTIONS.DIV.095",
+    "name": "FRACTIONS DIV skill 95",
+    "vector": [
+      0.6449781927566275,
+      0.07735087084836412,
+      0.2990236954601251
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.QUADRATIC.SOLVE.096",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.QUADRATIC.SOLVE.096",
+    "name": "QUADRATIC SOLVE skill 96",
+    "vector": [
+      0.6567237599366484,
+      0.3388392611364254,
+      0.20126318435493462
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.QUADRATIC.FACTOR.097",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.QUADRATIC.FACTOR.097",
+    "name": "QUADRATIC FACTOR skill 97",
+    "vector": [
+      0.7648479716547469,
+      0.014004799867217477,
+      0.9353067905118982
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.INEQUAL.SOLVE.098",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.INEQUAL.SOLVE.098",
+    "name": "INEQUAL SOLVE skill 98",
+    "vector": [
+      0.6872792027360521,
+      0.42000238927340394,
+      0.42463166001392894
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.POLY.SIMPLIFY.099",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.POLY.SIMPLIFY.099",
+    "name": "POLY SIMPLIFY skill 99",
+    "vector": [
+      0.8449497706905033,
+      0.22745241187743026,
+      0.6707262132302937
+    ],
+    "prerequisites": [],
+    "version": 1
+  },
+  {
+    "id": "ALG.EXP.RULES.100",
+    "type": "skill_node",
+    "domain": "math",
+    "skillId": "ALG.EXP.RULES.100",
+    "name": "EXP RULES skill 100",
+    "vector": [
+      0.35975426598017046,
+      0.09405129003446022,
+      0.9935682036725372
+    ],
+    "prerequisites": [],
+    "version": 1
+  }
+]
