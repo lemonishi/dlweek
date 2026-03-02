@@ -1,0 +1,9 @@
+openai
+pydantic
+python-dotenv
+numpy
+pandas
+scikit-learn
+pyBKT
+torch
+azure-cosmos>=4.7.0
