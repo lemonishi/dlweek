@@ -1,0 +1,171 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "CustomerProfileInformation",
+  "description": "Schema for customer profile information",
+  "properties": {
+    "customerID": {
+      "type": "string",
+      "description": "Unique identifier for the customer",
+      "pattern": "^CUST-[0-9]{4}-[0-9]{3}$"
+    },
+    "fullName": {
+      "type": "string",
+      "description": "Customer's full name"
+    },
+    "emailAddress": {
+      "type": "string",
+      "description": "Customer's email address",
+      "format": "email"
+    },
+    "phoneNumber": {
+      "type": "string",
+      "description": "Customer's phone number"
+    },
+    "dateOfBirth": {
+      "type": "string",
+      "description": "Customer's date of birth",
+      "format": "date"
+    },
+    "addressInformation": {
+      "type": "object",
+      "properties": {
+        "street": {
+          "type": "string",
+          "description": "Street address"
+        },
+        "city": {
+          "type": "string",
+          "description": "City"
+        },
+        "state": {
+          "type": "string",
+          "description": "State"
+        },
+        "zipCode": {
+          "type": "string",
+          "description": "Zip code"
+        },
+        "country": {
+          "type": "string",
+          "description": "Country"
+        }
+      },
+      "required": [
+        "street",
+        "city",
+        "state",
+        "zipCode",
+        "country"
+      ]
+    },
+    "accountDetails": {
+      "type": "object",
+      "properties": {
+        "accountStatus": {
+          "type": "string",
+          "description": "Account status"
+        },
+        "memberSince": {
+          "type": "string",
+          "description": "Date when customer became a member",
+          "format": "date"
+        },
+        "membershipTier": {
+          "type": "string",
+          "description": "Membership tier"
+        },
+        "creditLimit": {
+          "type": "string",
+          "description": "Credit limit",
+          "pattern": "^\\$[0-9]+(\\.[0-9]{2})?$"
+        },
+        "availableCredit": {
+          "type": "string",
+          "description": "Available credit",
+          "pattern": "^\\$[0-9]+(\\.[0-9]{2})?$"
+        }
+      },
+      "required": [
+        "accountStatus",
+        "memberSince",
+        "membershipTier",
+        "creditLimit",
+        "availableCredit"
+      ]
+    },
+    "contactPreferences": {
+      "type": "object",
+      "properties": {
+        "preferredContactMethod": {
+          "type": "string",
+          "description": "Preferred contact method"
+        },
+        "marketingCommunications": {
+          "type": "string",
+          "description": "Opt-in status for marketing communications"
+        },
+        "newsletterSubscription": {
+          "type": "string",
+          "description": "Newsletter subscription status"
+        },
+        "notificationFrequency": {
+          "type": "string",
+          "description": "Frequency of notifications"
+        }
+      },
+      "required": [
+        "preferredContactMethod",
+        "marketingCommunications",
+        "newsletterSubscription",
+        "notificationFrequency"
+      ]
+    },
+    "accountActivity": {
+      "type": "object",
+      "properties": {
+        "lastLogin": {
+          "type": "string",
+          "description": "Date of last login",
+          "format": "date"
+        },
+        "totalTransactions": {
+          "type": "integer",
+          "description": "Total number of transactions"
+        },
+        "totalSpend": {
+          "type": "string",
+          "description": "Total spend",
+          "pattern": "^\\$[0-9]+(\\.[0-9]{2})?$"
+        },
+        "rewardPoints": {
+          "type": "integer",
+          "description": "Total reward points"
+        },
+        "nextRenewalDate": {
+          "type": "string",
+          "description": "Date of next renewal",
+          "format": "date"
+        }
+      },
+      "required": [
+        "lastLogin",
+        "totalTransactions",
+        "totalSpend",
+        "rewardPoints",
+        "nextRenewalDate"
+      ]
+    }
+  },
+  "required": [
+    "customerID",
+    "fullName",
+    "emailAddress",
+    "phoneNumber",
+    "dateOfBirth",
+    "addressInformation",
+    "accountDetails",
+    "contactPreferences",
+    "accountActivity"
+  ]
+}

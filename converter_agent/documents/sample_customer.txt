@@ -1,0 +1,34 @@
+Customer Profile Information
+
+Customer ID: CUST-2024-001
+Full Name: Sarah Mitchell
+Email Address: sarah.mitchell@email.com
+Phone Number: +1-555-234-5678
+Date of Birth: 1990-03-15
+
+Address Information:
+Street: 456 Oak Avenue
+City: Portland
+State: Oregon
+Zip Code: 97214
+Country: United States
+
+Account Details:
+Account Status: Active
+Member Since: 2022-06-10
+Membership Tier: Gold
+Credit Limit: $50000
+Available Credit: $32500
+
+Contact Preferences:
+Preferred Contact Method: Email
+Marketing Communications: Opted In
+Newsletter Subscription: Yes
+Notification Frequency: Weekly
+
+Account Activity:
+Last Login: 2024-03-01
+Total Transactions: 127
+Total Spend: $28500
+Reward Points: 8500
+Next Renewal Date: 2025-06-10

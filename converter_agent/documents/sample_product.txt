@@ -1,0 +1,51 @@
+Product Catalog Entry
+
+Product ID: PROD-789456
+Product Name: Professional Wireless Noise-Canceling Headphones
+Brand: AudioTech Elite
+Category: Electronics > Audio > Headphones
+Subcategory: Premium Wireless
+
+Product Code: ATE-WNC-BLK-001
+SKU: ATE-WNC-001
+Barcode: 5901234123456
+
+Pricing Information:
+List Price: $299.99
+Discount: 15%
+Sale Price: $254.99
+Currency: USD
+
+Specifications:
+Driver Size: 40mm
+Impedance: 32 Ohms
+Frequency Response: 20Hz - 20kHz
+Warranty Period: 24 months
+Weight: 250 grams
+Cable Length: 1.2 meters
+
+Features:
+- Active Noise Cancellation
+- Bluetooth 5.0 Connectivity
+- 30-hour Battery Life
+- Quick Charge: 10 minutes = 5 hours
+- Built-in Microphone
+- Ambient Sound Mode
+- Foldable Design
+
+Available Colors:
+- Midnight Black
+- Silver Gray
+- Deep Blue
+- Rose Gold
+
+Stock Information:
+Current Stock: 450 units
+Reorder Level: 100 units
+Warehouse Location: Section A, Shelf 3
+Last Restock Date: 2024-02-28
+
+Customer Ratings:
+Average Rating: 4.7/5.0
+Number of Reviews: 1234
+Positive Reviews: 94%

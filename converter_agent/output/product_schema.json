@@ -1,0 +1,183 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Product Catalog Entry",
+  "type": "object",
+  "properties": {
+    "ProductID": {
+      "type": "string",
+      "description": "Unique identifier for the product"
+    },
+    "ProductName": {
+      "type": "string",
+      "description": "Name of the product"
+    },
+    "Brand": {
+      "type": "string",
+      "description": "Brand of the product"
+    },
+    "Category": {
+      "type": "string",
+      "description": "Main category of the product"
+    },
+    "Subcategory": {
+      "type": "string",
+      "description": "Subcategory of the product"
+    },
+    "ProductCode": {
+      "type": "string",
+      "description": "Product code"
+    },
+    "SKU": {
+      "type": "string",
+      "description": "Stock keeping unit"
+    },
+    "Barcode": {
+      "type": "string",
+      "description": "Product barcode"
+    },
+    "PricingInformation": {
+      "type": "object",
+      "properties": {
+        "ListPrice": {
+          "type": "number",
+          "description": "Original price of the product"
+        },
+        "Discount": {
+          "type": "number",
+          "description": "Discount percentage"
+        },
+        "SalePrice": {
+          "type": "number",
+          "description": "Sale price of the product"
+        },
+        "Currency": {
+          "type": "string",
+          "description": "Currency code"
+        }
+      },
+      "required": [
+        "ListPrice",
+        "Discount",
+        "SalePrice",
+        "Currency"
+      ]
+    },
+    "Specifications": {
+      "type": "object",
+      "properties": {
+        "DriverSize": {
+          "type": "string",
+          "description": "Size of the driver"
+        },
+        "Impedance": {
+          "type": "string",
+          "description": "Impedance value"
+        },
+        "FrequencyResponse": {
+          "type": "string",
+          "description": "Frequency response range"
+        },
+        "WarrantyPeriod": {
+          "type": "string",
+          "description": "Warranty period"
+        },
+        "Weight": {
+          "type": "number",
+          "description": "Weight of the product"
+        },
+        "CableLength": {
+          "type": "number",
+          "description": "Length of the cable"
+        }
+      },
+      "required": [
+        "DriverSize",
+        "Impedance",
+        "FrequencyResponse",
+        "WarrantyPeriod",
+        "Weight",
+        "CableLength"
+      ]
+    },
+    "Features": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of product features"
+    },
+    "AvailableColors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of available colors"
+    },
+    "StockInformation": {
+      "type": "object",
+      "properties": {
+        "CurrentStock": {
+          "type": "integer",
+          "description": "Current stock level"
+        },
+        "ReorderLevel": {
+          "type": "integer",
+          "description": "Stock reorder level"
+        },
+        "WarehouseLocation": {
+          "type": "string",
+          "description": "Location of the product in the warehouse"
+        },
+        "LastRestockDate": {
+          "type": "string",
+          "format": "date",
+          "description": "Date of the last restock"
+        }
+      },
+      "required": [
+        "CurrentStock",
+        "ReorderLevel",
+        "WarehouseLocation",
+        "LastRestockDate"
+      ]
+    },
+    "CustomerRatings": {
+      "type": "object",
+      "properties": {
+        "AverageRating": {
+          "type": "number",
+          "description": "Average rating of the product"
+        },
+        "NumberOfReviews": {
+          "type": "integer",
+          "description": "Total number of reviews"
+        },
+        "PositiveReviews": {
+          "type": "string",
+          "description": "Percentage of positive reviews"
+        }
+      },
+      "required": [
+        "AverageRating",
+        "NumberOfReviews",
+        "PositiveReviews"
+      ]
+    }
+  },
+  "required": [
+    "ProductID",
+    "ProductName",
+    "Brand",
+    "Category",
+    "Subcategory",
+    "ProductCode",
+    "SKU",
+    "Barcode",
+    "PricingInformation",
+    "Specifications",
+    "Features",
+    "AvailableColors",
+    "StockInformation",
+    "CustomerRatings"
+  ]
+}
