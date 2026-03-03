@@ -1,45 +1,40 @@
-# DLWeek
+# Virtuoso
 
-Base project for an AI-powered student learning assistant.
+Virtuoso is a all-in-one platform to optimize learning. Built for students who wants to reach their skill objectives, Virtuoso uses a user-friendly user interface (UI) along with an AI-powered pipeline to produce a recommender for students to maximize their learning.
 
-## Project Structure
+## Quick Setup
 
-```text
-dlweek/
-├─ README.md
-└─ frontend/
-	├─ src/
-	├─ package.json
-	├─ index.html
-	├─ vite.config.ts
-	└─ tsconfig*.json
-```
-
-## Frontend (React + TypeScript + Vite)
-
-### 1) Go to frontend folder
+1. Clone this repository to a folder of your choice
 
 ```bash
-cd frontend
+git clone https://github.com/lemonishi/dlweek
 ```
 
-### 2) Install dependencies
+2. Create a Python environment
+
+- For Anaconda users, create a new Conda environment:
 
 ```bash
-npm install
+conda create --name dlweek python=3.10
+conda activate dlweek
 ```
 
-### 3) Run development server
+- Otherwise, create a virtual environment
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate
-pip install -r "requirements.txt"
+source venv/bin/activate
 ```
 
-3. Add `.env` files
+3. Install Python dependencies
 
-- Add to `performance_agent/` and `converter_agent/`:
+```bash
+pip install -r requirements.txt
+```
+
+4. Add `.env` files
+
+- Add 1 in each of the `performance_agent` and `converter_agent` folders:
 
 ```env
 OPENAI_API_KEY=<INSERT_YOUR_OWN_OPENAI_API_KEY>
@@ -55,14 +50,19 @@ For DLWeek testers, `COSMOS_KEY` is located in Section 4 of the project document
 4. Run the backend server
 
 ```bash
-npm run build
+cd performance_agent
+python api.py
 ```
 
-### 5) Preview production build
+5. Start the frontend server
 
 ```bash
-npm run preview
+cd frontend
+npm install
+npm run dev
 ```
+
+6. Navigate to the link in the output (should be `http:localhost:5173`)
 
 ## Current UI Base
 
