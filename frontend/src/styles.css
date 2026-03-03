@@ -259,6 +259,89 @@ p {
   margin-bottom: 9px;
 }
 
+.skill-summary-graph {
+  display: grid;
+  gap: 12px;
+}
+
+.skill-summary-row {
+  display: grid;
+  grid-template-columns: minmax(140px, 240px) 1fr auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.skill-summary-label {
+  color: #334155;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.skill-summary-bars {
+  display: grid;
+  gap: 6px;
+}
+
+.skill-track {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  border-radius: 999px;
+}
+
+.skill-fill-current {
+  background: #10b981;
+}
+
+.skill-fill-target {
+  background: #f59e0b;
+}
+
+.skill-summary-values {
+  min-width: 88px;
+  display: grid;
+  gap: 2px;
+  color: #475569;
+  font-size: 0.82rem;
+  text-align: right;
+}
+
+.skill-summary-legend {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  color: #475569;
+  font-size: 0.85rem;
+}
+
+.skill-summary-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.skill-summary-legend i {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.legend-current {
+  background: #10b981;
+}
+
+.legend-target {
+  background: #f59e0b;
+}
+
 .doc-line.short {
   width: 72%;
 }

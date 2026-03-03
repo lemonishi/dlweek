@@ -8,7 +8,7 @@ import {
 import { Alert, Button, Card, Col, Input, Progress, Row, Select, Upload } from "antd";
 import type { UploadFile, UploadProps } from "antd";
 import type { Dispatch, SetStateAction } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   BrowserRouter,
   Navigate,
@@ -40,6 +40,26 @@ type AnalysisResult = {
   quiz: QuizBlock[];
 };
 
+type SkillSummaryBar = {
+  skillId: string;
+  skillName: string;
+  learnt: number;
+  toLearn: number;
+  gap: number;
+  status: string;
+};
+
+type SkillSummaryResponse = {
+  studentId: string;
+  graph: {
+    type: string;
+    title: string;
+    xKey: string;
+    maxBars: number;
+    bars: SkillSummaryBar[];
+  };
+};
+
 type DashboardProps = {
   files: UploadFile[];
   result: AnalysisResult | null;
@@ -47,10 +67,53 @@ type DashboardProps = {
 
 function Dashboard({ files, result }: DashboardProps) {
   const navigate = useNavigate();
+  const [summary, setSummary] = useState<SkillSummaryResponse | null>(null);
+  const [summaryLoading, setSummaryLoading] = useState(false);
+  const [summaryError, setSummaryError] = useState<string | null>(null);
   const quizCount = (result?.quiz ?? []).reduce(
     (sum, block) => sum + (block.questions?.length ?? 0),
     0,
   );
+
+  useEffect(() => {
+    if (!result?.studentId) {
+      setSummary(null);
+      return;
+    }
+
+    let cancelled = false;
+    const fetchSummary = async () => {
+      setSummaryLoading(true);
+      setSummaryError(null);
+      try {
+        const params = new URLSearchParams({
+          student_id: result.studentId,
+          max_bars: "5",
+        });
+        const response = await fetch(`${API_BASE}/api/student-skill-summary?${params.toString()}`);
+        if (!response.ok) {
+          throw new Error(`Skill summary request failed with ${response.status}`);
+        }
+        const data = (await response.json()) as SkillSummaryResponse;
+        if (!cancelled) {
+          setSummary(data);
+        }
+      } catch (e) {
+        if (!cancelled) {
+          setSummaryError(e instanceof Error ? e.message : "Failed to fetch skill summary.");
+        }
+      } finally {
+        if (!cancelled) {
+          setSummaryLoading(false);
+        }
+      }
+    };
+
+    void fetchSummary();
+    return () => {
+      cancelled = true;
+    };
+  }, [result?.studentId]);
 
   return (
     <div className="dashboard-page">
@@ -161,6 +224,56 @@ function Dashboard({ files, result }: DashboardProps) {
             </ol>
           </div>
         ))}
+      </Card>
+
+      <Card
+        title="Current vs To Learn Skills"
+        bordered={false}
+        className="uploaded-card"
+      >
+        {summaryLoading && <p className="dashboard-muted">Loading skill summary...</p>}
+        {summaryError && (
+          <Alert
+            type="warning"
+            showIcon
+            message={summaryError}
+            style={{ marginBottom: 8 }}
+          />
+        )}
+        {!summaryLoading && !summaryError && !summary?.graph?.bars?.length && (
+          <p className="dashboard-muted">No skill summary data found for this student.</p>
+        )}
+        {!summaryLoading && !summaryError && (summary?.graph?.bars?.length ?? 0) > 0 && (
+          <div className="skill-summary-graph">
+            {summary!.graph.bars.map((bar) => (
+              <div key={bar.skillId} className="skill-summary-row">
+                <div className="skill-summary-label">{bar.skillName}</div>
+                <div className="skill-summary-bars">
+                  <div className="skill-track">
+                    <div
+                      className="skill-fill skill-fill-current"
+                      style={{ width: `${Math.max(0, Math.min(100, bar.learnt * 100))}%` }}
+                    />
+                  </div>
+                  <div className="skill-track">
+                    <div
+                      className="skill-fill skill-fill-target"
+                      style={{ width: `${Math.max(0, Math.min(100, bar.toLearn * 100))}%` }}
+                    />
+                  </div>
+                </div>
+                <div className="skill-summary-values">
+                  <span>C: {bar.learnt.toFixed(2)}</span>
+                  <span>T: {bar.toLearn.toFixed(2)}</span>
+                </div>
+              </div>
+            ))}
+            <div className="skill-summary-legend">
+              <span><i className="legend-current" /> Current</span>
+              <span><i className="legend-target" /> To Learn</span>
+            </div>
+          </div>
+        )}
       </Card>
     </div>
   );
