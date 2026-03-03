@@ -107,7 +107,7 @@ async def upload_analyze(
             status_code=500,
             detail=(
                 "Cosmos resource not found. Check COSMOS_DB_NAME/COSMOS_DATABASE and "
-                "required containers (e.g. skill_library, objective, student_profiles). "
+                "required containers (e.g. skill_library, objective, student). "
                 f"Original error: {exc}"
             ),
         ) from exc

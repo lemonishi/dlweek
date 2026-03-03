@@ -1,7 +1,10 @@
 """Functions for merging extracted skills into Cosmos DB containers."""
+import os
 import logging
 from typing import Dict, Any
 from cosmos_conn import container
+
+STUDENTS_CONTAINER = os.getenv("COSMOS_STUDENTS_CONTAINER", "student")
 
 
 def upsert_objective(skill_obj: Dict[str, Any]):
@@ -53,7 +56,7 @@ def _enrich_from_vocab(skill_obj: Dict[str, Any]) -> Dict[str, Any]:
 
 def fetch_student_objectives(student_id: str) -> Dict[str, Any]:
     """Return a summary document for the student if it exists, else None."""
-    c = container("student_profiles")
+    c = container(STUDENTS_CONTAINER)
     query = "SELECT * FROM c WHERE c.studentId = @sid"
     items = list(c.query_items(
         query=query,
@@ -74,7 +77,7 @@ def upsert_student_profile(profile: Dict[str, Any]):
         sid = profile.get("studentId") or ""
         # use studentId as id or fall back to uuid
         profile["id"] = sid or str(__import__("uuid").uuid4())
-    c = container("student_profiles")
+    c = container(STUDENTS_CONTAINER)
     try:
         return c.upsert_item(profile)
     except Exception as e:

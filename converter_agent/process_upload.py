@@ -42,7 +42,7 @@ def process_file(file_path: Path, student_id: str, user_tag: str = None):
     merged = merge_skill_lists(existing, skill_list.model_dump())
     merged["studentId"] = student_id
 
-    # Update only student_profiles container
+    # Update student container
     upsert_student_profile(merged)
     logging.info("Student profile updated")
 
