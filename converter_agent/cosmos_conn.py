@@ -6,7 +6,12 @@ from azure.cosmos import CosmosClient
 # Read connection information from environment
 COSMOS_ENDPOINT = os.getenv("COSMOS_ENDPOINT")
 COSMOS_KEY = os.getenv("COSMOS_KEY")
-COSMOS_DATABASE = os.getenv("COSMOS_DATABASE", "MyDatabase")
+# Support both naming conventions used across this repo.
+COSMOS_DATABASE = (
+    os.getenv("COSMOS_DATABASE")
+    or os.getenv("COSMOS_DB_NAME")
+    or "MyDatabase"
+)
 
 if not COSMOS_ENDPOINT or not COSMOS_KEY:
     raise ValueError("COSMOS_ENDPOINT and COSMOS_KEY environment variables must be set")
