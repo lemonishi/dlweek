@@ -1,5 +1,6 @@
-import json, uuid
-from typing import Any, Dict, List, Tuple
+import json
+import uuid
+from typing import Any, Dict, List, Literal, Tuple
 from agent.llm import get_client  # your llm client getter
 
 def pick_next_skills(
@@ -28,6 +29,121 @@ def pick_next_skills(
     scored.sort(key=lambda x: x[1])
 
     return [s for s, _ in scored[:k]]
+
+
+def _parse_json_output(text: str) -> Any:
+    """
+    Parses JSON output with a minimal fallback when the model wraps JSON in prose.
+    """
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        start = text.find("{")
+        end = text.rfind("}")
+        if start != -1 and end != -1 and start < end:
+            return json.loads(text[start:end + 1])
+        start = text.find("[")
+        end = text.rfind("]")
+        if start != -1 and end != -1 and start < end:
+            return json.loads(text[start:end + 1])
+        raise
+
+
+def generate_yt_videos(domain: str, *, model: str = "gpt-5.2") -> List[str]:
+    client = get_client()
+    format_hint = """[
+  "<YOUTUBE_LINK>",
+  "..."
+]"""
+    resp = client.responses.create(
+        model=model,
+        instructions="You are an expert curator of educational videos on YouTube.",
+        input=f"Find a few high-quality YouTube video links for '{domain}'. Return only valid JSON using this format: {format_hint}",
+    )
+    data = _parse_json_output(resp.output_text)
+    return [x for x in data if isinstance(x, str)] if isinstance(data, list) else []
+
+
+def generate_quiz(
+    domain: str,
+    *,
+    num_questions: int = 10,
+    difficulty: int = 5,
+    model: str = "gpt-5.2",
+) -> List[Dict[str, Any]]:
+    client = get_client()
+    format_hint = """[
+  {
+    "question": "...",
+    "choices": ["...", "...", "...", "..."],
+    "answerIndex": 0
+  }
+]"""
+    resp = client.responses.create(
+        model=model,
+        instructions=f"You are an expert instructor in {domain}.",
+        input=(
+            f"Generate {num_questions} multiple-choice questions for '{domain}' at difficulty {difficulty}/10. "
+            f"Return only JSON in this format: {format_hint}"
+        ),
+    )
+    data = _parse_json_output(resp.output_text)
+    return [x for x in data if isinstance(x, dict)] if isinstance(data, list) else []
+
+
+def generate_flash_cards(
+    domain: str,
+    *,
+    num_cards: int = 5,
+    model: str = "gpt-5.2",
+) -> List[Dict[str, str]]:
+    client = get_client()
+    format_hint = """[
+  {
+    "front": "...",
+    "back": "..."
+  }
+]"""
+    resp = client.responses.create(
+        model=model,
+        instructions=f"You are an expert instructor in {domain}.",
+        input=f"Generate {num_cards} flash cards for '{domain}'. Return only JSON in this format: {format_hint}",
+    )
+    data = _parse_json_output(resp.output_text)
+    return [x for x in data if isinstance(x, dict)] if isinstance(data, list) else []
+
+
+def generate_learning_resources(
+    weak_skill_names: List[str],
+    *,
+    resource_type: Literal["video", "flashcards", "quiz"],
+    quiz_questions: int = 10,
+    quiz_difficulty: int = 5,
+    flashcard_count: int = 5,
+    model: str = "gpt-5.2",
+) -> List[Dict[str, Any]]:
+    """
+    Generates resources per weak skill, based on the student's selected mode.
+    """
+    out: List[Dict[str, Any]] = []
+    for skill_name in weak_skill_names:
+        if resource_type == "video":
+            content = generate_yt_videos(skill_name, model=model)
+        elif resource_type == "flashcards":
+            content = generate_flash_cards(skill_name, num_cards=flashcard_count, model=model)
+        else:
+            content = generate_quiz(
+                skill_name,
+                num_questions=quiz_questions,
+                difficulty=quiz_difficulty,
+                model=model,
+            )
+        out.append({
+            "skill": skill_name,
+            "type": resource_type,
+            "content": content,
+        })
+    return out
 
 def generate_recommendations_and_quiz(
     weak_skills: List[Tuple[Dict[str, Any], float]],

@@ -105,3 +105,49 @@ class CosmosRepo:
             [{"name": "@sid", "value": student_id}],
         )
         return res[0] if res else None
+
+    # -------------------------
+    # Ingestion helpers (stage 1)
+    # -------------------------
+    def upsert_objective_skills(self, *, student_id: str, skills: Iterable[Dict[str, Any]]) -> int:
+        """
+        Upserts objective skill documents into the objectives container.
+        Ensures `studentId` exists on each row.
+        """
+        count = 0
+        for row in skills:
+            if not isinstance(row, dict):
+                continue
+            doc = dict(row)
+            doc["studentId"] = student_id
+            if not isinstance(doc.get("id"), str) or not doc["id"]:
+                continue
+            self.objectives.upsert_item(doc)
+            count += 1
+        return count
+
+    def upsert_student_skills(self, *, student_id: str, skills: Iterable[Dict[str, Any]]) -> int:
+        """
+        Upserts student skill-state documents into the students container.
+        Ensures `studentId` exists on each row.
+        """
+        count = 0
+        for row in skills:
+            if not isinstance(row, dict):
+                continue
+            doc = dict(row)
+            doc["studentId"] = student_id
+            if not isinstance(doc.get("id"), str) or not doc["id"]:
+                continue
+            self.students.upsert_item(doc)
+            count += 1
+        return count
+
+    def upsert_student_profile(self, *, student_id: str, profile: Dict[str, Any], doc_id: str = "profile") -> Dict[str, Any]:
+        """
+        Upserts one student profile doc for history/interactions-based DKVMN inference.
+        """
+        doc = dict(profile)
+        doc["id"] = doc.get("id") or f"{student_id}:{doc_id}"
+        doc["studentId"] = student_id
+        return self.students.upsert_item(doc)
