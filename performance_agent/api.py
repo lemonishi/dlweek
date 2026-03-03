@@ -26,6 +26,8 @@ sys.path.append(str(ROOT))
 
 from process_upload import process_file  # type: ignore
 from agent.pipeline import get_weak_skill_names_for_student  # type: ignore
+from agent.azure_db import CosmosRepo, load_cosmos_config_from_env  # type: ignore
+from agent.chart_summary import build_student_skill_bar_chart_payload  # type: ignore
 from models.teacher import generate_quiz  # type: ignore
 
 
@@ -59,6 +61,33 @@ def _safe_filename(name: str) -> str:
 @app.get("/api/health")
 def health() -> Dict[str, str]:
     return {"status": "ok"}
+
+
+@app.get("/api/student-skill-summary")
+def student_skill_summary(
+    student_id: str,
+    max_bars: int = 5,
+) -> Dict[str, Any]:
+    """
+    Returns bar-chart-ready data for one student.
+    Data source:
+      - learnt skills from the student container
+      - to-learn skills from the objective container
+    """
+    cfg = load_cosmos_config_from_env()
+    repo = CosmosRepo(cfg)
+
+    objective_docs = repo.get_objective_skills(student_id=student_id)
+    student_docs = repo.get_student_skill_states(student_id=student_id)
+    student_profile = repo.get_student_profile_doc(student_id=student_id)
+
+    return build_student_skill_bar_chart_payload(
+        student_id=student_id,
+        objective_docs=objective_docs,
+        student_docs=student_docs,
+        student_profile_doc=student_profile,
+        max_bars=max_bars,
+    )
 
 
 @app.post("/api/upload-analyze")
