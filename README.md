@@ -32,10 +32,25 @@ npm install
 ### 3) Run development server
 
 ```bash
-npm run dev
+python -m venv .venv
+source .venv/bin/activate
+pip install -r "requirements.txt"
 ```
 
-### 4) Build for production
+3. Add `.env` files
+
+- Add to `performance_agent/` and `converter_agent/`:
+
+```env
+OPENAI_API_KEY=<INSERT_YOUR_OWN_OPENAI_API_KEY>
+COSMOS_ENDPOINT=https://forfunners.documents.azure.com:443/
+COSMOS_KEY=<INSERT_YOUR_OWN_DB_KEY>
+COSMOS_DB_NAME=learning_db
+COSMOS_OBJECTIVES_CONTAINER=objective
+COSMOS_STUDENTS_CONTAINER=student
+```
+
+4. Run the backend server
 
 ```bash
 npm run build
