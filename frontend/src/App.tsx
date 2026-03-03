@@ -1,9 +1,11 @@
 import {
+  AlertOutlined,
   CloseCircleOutlined,
   FileTextOutlined,
+  LoadingOutlined,
   UploadOutlined,
 } from "@ant-design/icons";
-import { Button, Card, Col, Progress, Row, Upload } from "antd";
+import { Alert, Button, Card, Col, Input, Progress, Row, Select, Upload } from "antd";
 import type { UploadFile, UploadProps } from "antd";
 import type { Dispatch, SetStateAction } from "react";
 import { useState } from "react";
@@ -16,45 +18,86 @@ import {
 } from "react-router-dom";
 
 const { Dragger } = Upload;
+const API_BASE = import.meta.env.VITE_API_BASE ?? "http://localhost:8000";
+
+type QuizQuestion = {
+  question: string;
+  choices: string[];
+  answerIndex: number;
+};
+
+type QuizBlock = {
+  skill: string;
+  questions: QuizQuestion[];
+  error?: string;
+};
+
+type AnalysisResult = {
+  studentId: string;
+  processedFiles: string[];
+  docTag: string;
+  weakSkills: string[];
+  quiz: QuizBlock[];
+};
 
 type DashboardProps = {
   files: UploadFile[];
+  result: AnalysisResult | null;
 };
 
-function Dashboard({ files }: DashboardProps) {
+function Dashboard({ files, result }: DashboardProps) {
   const navigate = useNavigate();
+  const quizCount = (result?.quiz ?? []).reduce(
+    (sum, block) => sum + (block.questions?.length ?? 0),
+    0,
+  );
 
   return (
     <div className="dashboard-page">
       <header className="dashboard-header">
         <div>
           <p className="dashboard-kicker">Learning Pulse Dashboard</p>
-          <h1>Welcome back — documents uploaded successfully.</h1>
+          <h1>Learning analysis completed.</h1>
           <p className="dashboard-subtext">
-            Backend is not connected yet, so this dashboard is a frontend
-            placeholder for your next phase.
+            Files were processed with converter + weakness detection + quiz
+            generation.
           </p>
         </div>
         <Button onClick={() => navigate("/")}>Upload More Files</Button>
       </header>
 
+      {!result && (
+        <Alert
+          type="warning"
+          showIcon
+          message="No analysis result found."
+          description="Upload files from the landing page to run the full pipeline."
+          style={{ marginBottom: 16 }}
+        />
+      )}
+
       <Row gutter={[16, 16]}>
         <Col xs={24} md={12} lg={8}>
           <Card title="Files Uploaded" bordered={false}>
             <h2 className="dashboard-value">{files.length}</h2>
-            <p className="dashboard-muted">Ready for analysis pipeline</p>
+            <p className="dashboard-muted">Processed by converter agent</p>
           </Card>
         </Col>
         <Col xs={24} md={12} lg={8}>
-          <Card title="Model Readiness" bordered={false}>
-            <h2 className="dashboard-value">70%</h2>
-            <Progress percent={70} showInfo={false} strokeColor="#14b8a6" />
+          <Card title="Weak Skills Found" bordered={false}>
+            <h2 className="dashboard-value">{result?.weakSkills.length ?? 0}</h2>
+            <Progress
+              percent={Math.min(100, ((result?.weakSkills.length ?? 0) / 5) * 100)}
+              showInfo={false}
+              strokeColor="#14b8a6"
+            />
           </Card>
         </Col>
         <Col xs={24} md={24} lg={8}>
-          <Card title="Next Action" bordered={false}>
+          <Card title="Quiz Questions" bordered={false}>
+            <h2 className="dashboard-value">{quizCount}</h2>
             <p className="dashboard-muted">
-              Connect backend endpoint to parse and index uploaded files.
+              Generated via `models/teacher.py`
             </p>
           </Card>
         </Col>
@@ -74,6 +117,51 @@ function Dashboard({ files }: DashboardProps) {
           ))}
         </ul>
       </Card>
+
+      <Card title="Weak Skills" bordered={false} className="uploaded-card">
+        <ul className="uploaded-list">
+          {(result?.weakSkills ?? []).map((skill) => (
+            <li key={skill}>
+              <AlertOutlined />
+              <span>{skill}</span>
+            </li>
+          ))}
+          {!result?.weakSkills?.length && <li>No weak skills found.</li>}
+        </ul>
+      </Card>
+
+      <Card title="Generated Quiz" bordered={false} className="uploaded-card">
+        {(result?.quiz ?? []).map((block) => (
+          <div key={block.skill} className="quiz-block">
+            <h3>{block.skill}</h3>
+            {block.error && (
+              <Alert
+                type="error"
+                showIcon
+                message={`Quiz generation failed: ${block.error}`}
+                style={{ marginBottom: 8 }}
+              />
+            )}
+            <ol className="quiz-list">
+              {block.questions.map((q, index) => (
+                <li key={`${block.skill}-${index}`}>
+                  <p>{q.question}</p>
+                  <ul>
+                    {q.choices.map((choice, cIndex) => (
+                      <li
+                        key={`${block.skill}-${index}-${cIndex}`}
+                        className={cIndex === q.answerIndex ? "correct-choice" : ""}
+                      >
+                        {choice}
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+            </ol>
+          </div>
+        ))}
+      </Card>
     </div>
   );
 }
@@ -81,10 +169,16 @@ function Dashboard({ files }: DashboardProps) {
 type LandingPageProps = {
   files: UploadFile[];
   setFiles: Dispatch<SetStateAction<UploadFile[]>>;
+  setResult: Dispatch<SetStateAction<AnalysisResult | null>>;
 };
 
-function LandingPage({ files, setFiles }: LandingPageProps) {
+function LandingPage({ files, setFiles, setResult }: LandingPageProps) {
   const navigate = useNavigate();
+  const [studentId, setStudentId] = useState("student_123");
+  const [docTag, setDocTag] = useState<"lecture" | "homework">("lecture");
+  const [topK, setTopK] = useState(5);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const uploadProps: UploadProps = {
     multiple: true,
@@ -99,6 +193,45 @@ function LandingPage({ files, setFiles }: LandingPageProps) {
         currentFiles.filter((file) => file.uid !== removedFile.uid),
       );
     },
+  };
+
+  const submitForAnalysis = async () => {
+    if (files.length === 0 || !studentId.trim()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+    setError(null);
+    try {
+      const formData = new FormData();
+      formData.append("student_id", studentId.trim());
+      formData.append("doc_tag", docTag);
+      formData.append("top_k", String(topK));
+
+      files.forEach((file) => {
+        if (file.originFileObj) {
+          formData.append("files", file.originFileObj, file.name);
+        }
+      });
+
+      const response = await fetch(`${API_BASE}/api/upload-analyze`, {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        const message = await response.text();
+        throw new Error(message || `Request failed with ${response.status}`);
+      }
+
+      const data = (await response.json()) as AnalysisResult;
+      setResult(data);
+      navigate("/dashboard");
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Upload failed.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -120,6 +253,29 @@ function LandingPage({ files, setFiles }: LandingPageProps) {
           </p>
 
           <Card className="upload-card" bordered={false}>
+            <div className="form-grid">
+              <Input
+                placeholder="Student ID"
+                value={studentId}
+                onChange={(event) => setStudentId(event.target.value)}
+              />
+              <Select
+                value={docTag}
+                options={[
+                  { label: "Lecture", value: "lecture" },
+                  { label: "Homework", value: "homework" },
+                ]}
+                onChange={(value) => setDocTag(value)}
+              />
+              <Input
+                type="number"
+                min={1}
+                max={10}
+                value={topK}
+                onChange={(event) => setTopK(Number(event.target.value) || 5)}
+              />
+            </div>
+
             <Dragger {...uploadProps} className="upload-dragger">
               <p className="ant-upload-drag-icon">
                 <UploadOutlined />
@@ -164,14 +320,17 @@ function LandingPage({ files, setFiles }: LandingPageProps) {
               )}
             </div>
 
+            {error && <Alert type="error" showIcon message={error} />}
+
             <Button
               type="primary"
               size="large"
               className="continue-button"
-              disabled={files.length === 0}
-              onClick={() => navigate("/dashboard")}
+              disabled={files.length === 0 || isSubmitting}
+              onClick={submitForAnalysis}
+              icon={isSubmitting ? <LoadingOutlined /> : undefined}
             >
-              Continue to Dashboard
+              {isSubmitting ? "Processing..." : "Upload and Analyze"}
             </Button>
           </Card>
         </section>
@@ -204,15 +363,21 @@ function LandingPage({ files, setFiles }: LandingPageProps) {
 
 function App() {
   const [files, setFiles] = useState<UploadFile[]>([]);
+  const [result, setResult] = useState<AnalysisResult | null>(null);
 
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path="/"
-          element={<LandingPage files={files} setFiles={setFiles} />}
+          element={
+            <LandingPage files={files} setFiles={setFiles} setResult={setResult} />
+          }
         />
-        <Route path="/dashboard" element={<Dashboard files={files} />} />
+        <Route
+          path="/dashboard"
+          element={<Dashboard files={files} result={result} />}
+        />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
