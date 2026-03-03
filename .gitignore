@@ -1,4 +1,5 @@
 __pycache__/
+.npm-cache/
 .env
 .venv
 # Environment files
