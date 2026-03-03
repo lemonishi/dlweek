@@ -50,6 +50,8 @@ COSMOS_OBJECTIVES_CONTAINER=objective
 COSMOS_STUDENTS_CONTAINER=student
 ```
 
+For DLWeek testers, `COSMOS_KEY` is located in Section 4 of the project documentation. You are still required to use your own OpenAI API Key.
+
 4. Run the backend server
 
 ```bash
